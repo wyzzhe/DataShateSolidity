@@ -35,31 +35,6 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "creator",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "reward",
-						"type": "uint256"
-					}
-				],
-				"name": "DatasetCreated",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "uint256",
-						"name": "datasetId",
-						"type": "uint256"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
 						"name": "maker",
 						"type": "address"
 					},
@@ -96,6 +71,31 @@
 					}
 				],
 				"name": "DatasetPurchased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "datasetId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					}
+				],
+				"name": "DatasetUpload",
 				"type": "event"
 			},
 			{
@@ -163,19 +163,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "approve",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
@@ -190,30 +177,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "price",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "validationReward",
-						"type": "uint256"
-					}
-				],
-				"name": "createDataset",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -251,13 +214,7 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
+				"inputs": [],
 				"name": "deployDataPunkCoin",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -462,6 +419,30 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "validationReward",
+						"type": "uint256"
+					}
+				],
+				"name": "updateDataset",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "datasetId",
 						"type": "uint256"
 					}
@@ -540,11 +521,11 @@
 			]
 		},
 		"contracts/DataPunk.sol": {
-			"keccak256": "0x0a58078f4ba81af1ec595af32e81eb07ab38ca5eaf9b21a2cb01ec5f9807e3af",
+			"keccak256": "0xe6887029c99a388267440191ee51a4514f8f56a222c6cb61b97699347a833790",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d14ff72fd265f41c3a1bf7d5377d9a5d40560ecac9e77e4bd1a6be8d58963409",
-				"dweb:/ipfs/Qme9WeRivH7hRaiWRKhUHWQCZSqXUrRp3M8ZtfNJ1XC6Z3"
+				"bzz-raw://c411f196cc845c234a05542e729c1a2341024a61b129b55ad99697fc35fa56ed",
+				"dweb:/ipfs/QmcT4JfcwqQ8ERP13yH3x7FFcAeVHedrsSz251DnNZSb2v"
 			]
 		}
 	},
