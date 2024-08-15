@@ -6,174 +6,85 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					}
+				],
+				"name": "deployTask",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "tokenAddress",
-						"type": "address"
-					}
-				],
-				"name": "DataPunkCoinDeployed",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "uint256",
-						"name": "datasetId",
-						"type": "uint256"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "maker",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "cost",
-						"type": "uint256"
-					}
-				],
-				"name": "DatasetMaked",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "uint256",
-						"name": "datasetId",
-						"type": "uint256"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "purchaser",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "cost",
-						"type": "uint256"
-					}
-				],
-				"name": "DatasetPurchased",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "uint256",
-						"name": "datasetId",
-						"type": "uint256"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "creator",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "reward",
-						"type": "uint256"
-					}
-				],
-				"name": "DatasetUpload",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "uint256",
-						"name": "datasetId",
-						"type": "uint256"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "validator",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "reward",
-						"type": "uint256"
-					}
-				],
-				"name": "DatasetValidated",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "validator",
-						"type": "address"
-					}
-				],
-				"name": "ValidatorRegistered",
-				"type": "event"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "allowance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "taskId",
+						"type": "uint256"
 					}
 				],
-				"name": "balanceOf",
+				"name": "getTask",
 				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "datasetId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "uploader",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "isValidated",
+								"type": "bool"
+							},
+							{
+								"internalType": "address",
+								"name": "validator",
+								"type": "address"
+							}
+						],
+						"internalType": "struct DataPunk.Dataset[]",
+						"name": "",
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -183,132 +94,21 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "datasets",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "creator",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "price",
+						"name": "taskId",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "validationReward",
+						"name": "datasetId",
 						"type": "uint256"
 					},
 					{
 						"internalType": "bool",
-						"name": "isValidated",
+						"name": "challengeStatus",
 						"type": "bool"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "deployDataPunkCoin",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "dpkContractAddress",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getAllDatasets",
-				"outputs": [
-					{
-						"internalType": "address[]",
-						"name": "creators",
-						"type": "address[]"
-					},
-					{
-						"internalType": "uint256[]",
-						"name": "prices",
-						"type": "uint256[]"
-					},
-					{
-						"internalType": "uint256[]",
-						"name": "validationRewards",
-						"type": "uint256[]"
-					},
-					{
-						"internalType": "bool[]",
-						"name": "isValidatedFlags",
-						"type": "bool[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getAllValidators",
-				"outputs": [
-					{
-						"internalType": "address[]",
-						"name": "",
-						"type": "address[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "account",
-						"type": "address"
-					}
-				],
-				"name": "getDPCBalanceOf",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getDPCSupply",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "isDataPunkCoinDeployed",
+				"name": "raiseChallenge",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -316,126 +116,49 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "makeDatasePrice",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "price",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "validationReward",
-						"type": "uint256"
-					}
-				],
-				"name": "makeDataset",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "owner",
-				"outputs": [
+				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "taskId",
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
+				"name": "uploadDataset",
+				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "publicValidators",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "taskId",
+						"type": "uint256"
+					},
 					{
 						"internalType": "uint256",
 						"name": "datasetId",
 						"type": "uint256"
 					}
 				],
-				"name": "purchaseDataset",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "registerAsValidator",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "price",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "validationReward",
-						"type": "uint256"
-					}
-				],
-				"name": "updateDataset",
+				"name": "verifyDataset",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "bool",
 						"name": "",
-						"type": "uint256"
+						"type": "bool"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "datasetId",
-						"type": "uint256"
-					}
-				],
-				"name": "validateDataset",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -468,19 +191,11 @@
 	},
 	"sources": {
 		"contracts/DataPunk/DataPunk.sol": {
-			"keccak256": "0x582155143be42e28d91431265818a2a1287bf08f096d7333346c8e447fe5c997",
+			"keccak256": "0x1b0bda5f134b82fdb887c61ce57f369a0fe5105a55770b154e728a4b601a4a9a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5364e7cdf60e4213443d34f60b6338edc6d7562cb81639107884669a7488fdac",
-				"dweb:/ipfs/QmR954EAddbD3MZbi9j7YUCviGEZ1NREcePUBcMF9f4VkU"
-			]
-		},
-		"contracts/DataPunk/DataPunkCoin.sol": {
-			"keccak256": "0x07edf17effdb2126e49f2e145d83e783f72b6f4c6b6de8d0156f4cb0a89e5688",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://268833daf0da01e5b0da47dc900c93312ddc4104e071a78685641bbb56ae6ca9",
-				"dweb:/ipfs/Qma8ASsx1S4wVVCPDgCz3RS2MRXRLnghv8vKtsFRx9E9tu"
+				"bzz-raw://ffcff01ef916d3fbeed007c081296e12a301478c5a58dcd20c760fafd6ebc05f",
+				"dweb:/ipfs/QmUpXrU7zTeg4R5fiJemBFcF6fkgeS574RTk24VNeWwsnH"
 			]
 		}
 	},

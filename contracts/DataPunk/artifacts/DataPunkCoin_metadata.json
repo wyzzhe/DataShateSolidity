@@ -261,11 +261,11 @@
 	},
 	"sources": {
 		"contracts/DataPunk/DataPunkCoin.sol": {
-			"keccak256": "0x07edf17effdb2126e49f2e145d83e783f72b6f4c6b6de8d0156f4cb0a89e5688",
+			"keccak256": "0x891888940d8a9a4c3f9b81c2821b8cbea941c9f24218ea2782bd6495d62ed932",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://268833daf0da01e5b0da47dc900c93312ddc4104e071a78685641bbb56ae6ca9",
-				"dweb:/ipfs/Qma8ASsx1S4wVVCPDgCz3RS2MRXRLnghv8vKtsFRx9E9tu"
+				"bzz-raw://0c154a0b3f5d836df711ee53bfa1c778d84e9d9fa4cfa023e39fa746c0da4fde",
+				"dweb:/ipfs/QmPtwfMiPADMqcbGtsAcyRBGoEmUC23ygrig9voGANUedx"
 			]
 		}
 	},

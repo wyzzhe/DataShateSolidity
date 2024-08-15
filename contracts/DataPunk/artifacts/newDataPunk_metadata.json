@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					}
+				],
+				"name": "deployTask",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/DataPunk/newDataPunk.sol": "newDataPunk"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/DataPunk/newDataPunk.sol": {
+			"keccak256": "0x484d1655bc6f1381a200e7836121775fb59f20a1762b2256025ba80fd9e5667d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://100003fc132dbff0cce4e461678f6ccb38f816cee15c7e2419aeda461e8c57c9",
+				"dweb:/ipfs/QmQzoYJyXd32ePbVETfsJ7c93zeNJPnEDxef9LEc17Zg6G"
+			]
+		}
+	},
+	"version": 1
+}

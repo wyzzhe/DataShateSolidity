@@ -5,8 +5,8 @@ pragma solidity ^0.8.20;
 contract DataPunkCoin {
     string public constant name = "DataPunk Coin"; // 代币名称
     string public constant symbol = "DPC"; // 代币符号
-    uint8 public constant decimals = 18; // 小数位数，也称为精度
-    uint256 _totalSupply = uint256(100*10**18); // 发行总量 100 个
+    uint8 public constant decimals = 2; // 小数位数，也称为精度
+    uint256 _totalSupply = uint256(100*10**2); // 发行总量 100 个
 
     // 存放持币地址对应的持币数量
     mapping(address => uint256) private balances;  
