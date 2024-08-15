@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-// 是一个具体合约，而不是接口
+import "./DataPunkCoinInter.sol";
+
 contract DataPunk {
-    // 数据集名字：数据集信息
-    mapping(uint256 => Task) private TaskDataset;
+    // IERC20接口
+    DataPunkCoinInter public dataPunkCoinInter;
 
     // 任务结构体
     struct Task {
@@ -26,6 +27,10 @@ contract DataPunk {
     // 数据集数组
     Task[] private tasks;
     Dataset[] private datasets;
+
+    constructor() {
+        dataPunkCoinInter = new DataPunkCoinInter();
+    }
 
     function getTask(uint256 taskId) public view returns (uint256, string memory, address, uint256, Dataset[] memory) {
         Task storage task = tasks[taskId];
@@ -53,19 +58,20 @@ contract DataPunk {
     }
 
     // 管理员 处理质疑
-    function raiseChallenge(uint256 taskId, uint256 datasetId, bool challengeStatus) public returns (bool) {
+    function raiseChallenge(uint256 amount, uint256 taskId, uint256 datasetId, bool challengeStatus) public returns (bool) {
         Task storage task = tasks[taskId];
         Dataset storage dataset = task.datasets[datasetId];
         dataset.isValidated = challengeStatus;
         address publisher = task.publisher;
-        address validator = dataset.validator;
+        address uploader = dataset.uploader;
 
         // 质疑通过
         if (challengeStatus == true) {
             // 发放奖励给uploader, validator忠诚度提升
-            
+            transferToken(uploader, amount);
         } else {
             // 扣除验证者质押ETH, 质疑者获得奖励
+            transferToken(publisher, amount);
         }
 
         return true;
@@ -91,12 +97,27 @@ contract DataPunk {
     }
 
     // 验证者 验证数据集
-    function verifyDataset(uint256 taskId, uint256 datasetId) public returns (bool) {
+    function verifyDataset(uint256 taskId, uint256 datasetId) public payable returns (bool) {
         Task storage task = tasks[taskId];
         Dataset storage dataset = task.datasets[datasetId];
         dataset.isValidated = true;
         dataset.validator = msg.sender;
 
         return true;
+    }
+
+    function transferToken(address recipient, uint256 amount) public {
+        // 获取 ERC-20 合约实例
+        DataPunkCoinInter token = DataPunkCoinInter(dataPunkCoinInter);
+
+        // 调用 transfer 函数转移代币
+        bool success = token.transfer(recipient, amount);
+        
+        require(success, "Token transfer failed");
+    }
+
+    // 新增函数，获取 DataPunkCoinInter 合约地址
+    function getDataPunkCoinInterAddress() public view returns (address) {
+        return address(dataPunkCoinInter);
     }
 }
